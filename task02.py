@@ -1,10 +1,8 @@
 # Напишите программу для проверки истинности утверждения
 # ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат
 
-var_x = int(input("Введите переменную Х"))
-var_y = int(input("Введите переменную Y"))
-var_z = int(input("Введите переменную Z"))
-if var_z == var_y and var_z == var_x:
-    print("Истина")
-else:
-    print("Ложь")
+for x in [False, True]:
+    for y in [False, True]:
+        for z in [False, True]:
+            if not(x or y or z) == (not x) and not(x or y or z) == (not y) and not(x or y or z) == (not z) :
+                print(f"Утверждение истинно для X = {x}, Y = {y}, Z = {z}")
